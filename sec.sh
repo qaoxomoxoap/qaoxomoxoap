@@ -34,8 +34,6 @@ echo "c) Ecriptar fitxer"
 echo "d) Còpia de seguretat de Keepassxc"
 echo "e) Esborrar fitxer o carpeta de forma segura"
 echo "f) Executar hBlock"
-echo "g) Còpia de seguretat de Thunderbird"
-echo "h) Restaurar còpia de seguretat de Thunderbird"
 echo "**********"
 echo
 echo "q) Sortir"
@@ -112,30 +110,6 @@ sh $adr/sortida.sh
 ############### Executar hBlock
 f)
 npx hblock
-sh $adr/sortida.sh
-;;
-
-############### Còpia de seguretat de Thunderbird
-g)
-kontainer=w6tum01k.default-release
-
-rsync -vazh $HOME/.thunderbird/$kontainer/ /media/zonadart/EXTERN/thunderbird/carpeta
-
-sh $adr/sortida.sh
-;;
-
-############### Restaurar còpia de seguretat de Thunderbird
-h)
-find $HOME/.thunderbird/. -maxdepth 1 -type d
-echo -n "Introdueïx nom de la carpeta gral. ('q' per sortir): "
-read kontainer
-if [ "$kontainer" = "q" ]; then
-  exit
-fi
-
-rm -Rf $HOME/.thunderbird/$kontainer/*
-rsync -vazh /media/zonadart/EXTERN/thunderbird/carpeta/* $HOME/.thunderbird/$kontainer/
-
 sh $adr/sortida.sh
 ;;
 
