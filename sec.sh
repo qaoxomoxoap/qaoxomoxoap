@@ -123,4 +123,3 @@ sh $adr/sortida.sh
 echo Opció invàlida
 ###########################################################
 esac
-#done
