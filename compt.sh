@@ -28,10 +28,10 @@ echo "M E N U :"
 echo "========="
 echo
 echo "***** COMPTABILITAT *****"
-echo "a) Restaurar copia de seguretat abanq"
-echo "b) Esborrar copia de seguretat sobrant abanq"
-echo "c) Restaurar copia de seguretat clotes"
-echo "d) Esborrar copia de seguretat sobrant clotes"
+echo "a) Esborrar copia de seguretat sobrant abanq"
+echo "b) Esborrar copia de seguretat sobrant clotes"
+echo "c) Restaurar copia de seguretat abanq"
+echo "d) Restaurar copia de seguretat clotes"
 echo "**********"
 echo
 echo "q) Sortir"
@@ -43,7 +43,7 @@ read opcio
 case $opcio in
 
 ############### Gestionar copia de seguretat Eneboo abanq
-b)
+a)
 echo
 mv $HOME/*.sql $HOME/MEGA/MEGAsync/zonadart/documents/sec/comptabilitat/.
 for i in $(ls -1 $HOME/MEGA/MEGAsync/zonadart/documents/sec/comptabilitat/*.sql)
@@ -66,7 +66,7 @@ sh $adr/sortida.sh
 ;;
 
 ############### Restaurar copia de seguretat Eneboo abanq
-a)
+c)
 echo
 echo -n "Procedir a restaurar còpia de seguretat ('q' per sortir):"
 read seguretat
@@ -89,7 +89,7 @@ sh $adr/sortida.sh
 ;;
 
 ############### Gestionar copia de seguretat Eneboo clotes
-d)
+b)
 echo
 mv $HOME/*.sql $HOME/MEGA/MEGAsync/zonadart/documents/sec/comptabilitat/clotes/.
 for i in $(ls -1 $HOME/MEGA/MEGAsync/zonadart/documents/sec/comptabilitat/clotes/*.sql)
@@ -112,7 +112,7 @@ sh $adr/sortida.sh
 ;;
 
 ############### Restaurar copia de seguretat Eneboo clotes
-c)
+d)
 echo
 echo -n "Procedir a restaurar còpia de seguretat ('q' per sortir):"
 read seguretat
