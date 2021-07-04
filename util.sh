@@ -47,7 +47,7 @@ read opcio
 case $opcio in
 
 i)
-echo -n "Introdueïx nom del mp3 ('q' per sortir): "
+echo -n "Introdueïx nom del mp3 a generar ('q' per sortir): "
 read disc
 if [ "$disc" = "q" ]; then
   exit
