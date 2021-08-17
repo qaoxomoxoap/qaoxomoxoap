@@ -38,6 +38,7 @@ set -eu
 		sudo cp compt.sh /opt/zonadart/
 		sudo cp repo.sh /opt/zonadart/
 		sudo cp sec.sh /opt/zonadart/
+		sudo cp copsec.sh /opt/zonadart
 		sudo cp serv.sh /opt/zonadart/
 		sudo cp sist.sh /opt/zonadart/
 		sudo cp xarx.sh /opt/zonadart/
