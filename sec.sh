@@ -103,7 +103,8 @@ read caput
 if [ "$caput" = "q" ]; then
   exit
 fi
-shred -n 10 -uvz $caput
+#shred -n 10 -uvz $caput
+wipe -rfi $caput
 sh $adr/sortida.sh
 ;;
 
