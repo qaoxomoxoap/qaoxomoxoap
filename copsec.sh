@@ -42,6 +42,11 @@ echo "g) Còpia de seguretat de 'ZONADART'"
 echo "h) Còpia de seguretat incremental de 'ZONADART'"
 echo "i) Recupera 'ZONADART'"
 echo
+echo "***** ARDOUR *****"
+echo "j) Còpia de seguretat de 'ARDOUR'"
+echo "k) Còpia de seguretat incremental de 'ARDOUR'"
+echo "l) Recupera 'ARDOUR'"
+echo
 echo "**********"
 echo
 echo "q) Sortir"
@@ -103,7 +108,7 @@ sh $adr/sortida.sh
 
 ############### ZONADART incremental
 h)
-duplicity incremental /home/zonadart file:///media/zonadart/EXTERN/zonadart_bak --exclude ~/MEGA --exclude ~/.thunderbird
+duplicity incremental /home/zonadart file:///media/zonadart/EXTERN/zonadart_bak --exclude ~/MEGA --exclude ~/.thunderbird --exclude ~/Ardour
 
 sh $adr/sortida.sh
 ;;
@@ -111,6 +116,27 @@ sh $adr/sortida.sh
 ############### ZONADART recupera
 i)
 duplicity file:///media/zonadart/EXTERN/zonadart_bak recupera
+
+sh $adr/sortida.sh
+;;
+
+############### ARDOUR
+j)
+duplicity /home/zonadart/Ardour file:///media/zonadart/EXTERN/ardour_bak
+
+sh $adr/sortida.sh
+;;
+
+############### ARDOUR incremental
+k)
+duplicity incremental /home/zonadart/Ardour file:///media/zonadart/EXTERN/ardour_bak
+
+sh $adr/sortida.sh
+;;
+
+############### ARDOUR recupera
+l)
+duplicity file:///media/zonadart/EXTERN/ardour_bak recupera
 
 sh $adr/sortida.sh
 ;;
