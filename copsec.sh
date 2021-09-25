@@ -47,6 +47,11 @@ echo "j) Còpia de seguretat de 'ARDOUR'"
 echo "k) Còpia de seguretat incremental de 'ARDOUR'"
 echo "l) Recupera 'ARDOUR'"
 echo
+echo "***** DOCUMENTS *****"
+echo "m) Còpia de seguretat de 'DOCUMENTS'"
+echo "n) Còpia de seguretat incremental de 'DOCUMENTS'"
+echo "o) Recupera 'DOCUMENTS'"
+echo
 echo "**********"
 echo
 echo "q) Sortir"
@@ -73,7 +78,7 @@ sh $adr/sortida.sh
 
 ############### MEGA recupera
 c)
-duplicity file:///media/zonadart/EXTERN/mega_bak recupera
+duplicity file:///media/zonadart/EXTERN/mega_bak recupera_mega
 
 sh $adr/sortida.sh
 ;;
@@ -94,28 +99,28 @@ sh $adr/sortida.sh
 
 ############### THUNDERBIRD recupera
 f)
-duplicity file:///media/zonadart/EXTERN/thunderbird_bak recupera
+duplicity file:///media/zonadart/EXTERN/thunderbird_bak recupera_thunderbird
 
 sh $adr/sortida.sh
 ;;
 
 ############### ZONADART
 g)
-duplicity /home/zonadart file:///media/zonadart/EXTERN/zonadart_bak --exclude ~/MEGA --exclude ~/.thunderbird
+duplicity /home/zonadart file:///media/zonadart/EXTERN/zonadart_bak --exclude ~/MEGA --exclude ~/.thunderbird --exclude ~/Ardour --exclude ~/Documents
 
 sh $adr/sortida.sh
 ;;
 
 ############### ZONADART incremental
 h)
-duplicity incremental /home/zonadart file:///media/zonadart/EXTERN/zonadart_bak --exclude ~/MEGA --exclude ~/.thunderbird --exclude ~/Ardour
+duplicity incremental /home/zonadart file:///media/zonadart/EXTERN/zonadart_bak --exclude ~/MEGA --exclude ~/.thunderbird --exclude ~/Ardour --exclude ~/Documents
 
 sh $adr/sortida.sh
 ;;
 
 ############### ZONADART recupera
 i)
-duplicity file:///media/zonadart/EXTERN/zonadart_bak recupera
+duplicity file:///media/zonadart/EXTERN/zonadart_bak recupera_zonadart
 
 sh $adr/sortida.sh
 ;;
@@ -136,7 +141,28 @@ sh $adr/sortida.sh
 
 ############### ARDOUR recupera
 l)
-duplicity file:///media/zonadart/EXTERN/ardour_bak recupera
+duplicity file:///media/zonadart/EXTERN/ardour_bak recupera_ardour
+
+sh $adr/sortida.sh
+;;
+
+############### DOCUMENTS
+m)
+duplicity /home/zonadart/Documents file:///media/zonadart/EXTERN/documents_bak
+
+sh $adr/sortida.sh
+;;
+
+############### DOCUMENTS incremental
+n)
+duplicity incremental /home/zonadart/Documents file:///media/zonadart/EXTERN/documents_bak
+
+sh $adr/sortida.sh
+;;
+
+############### DOCUMENTS recupera
+o)
+duplicity file:///media/zonadart/EXTERN/documents_bak recupera_documents
 
 sh $adr/sortida.sh
 ;;
