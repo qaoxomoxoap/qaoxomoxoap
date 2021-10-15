@@ -28,29 +28,39 @@ echo "M E N U :"
 echo "========="
 echo
 echo "***** MEGA *****"
-echo "a) Còpia de seguretat de 'MEGA'"
-echo "b) Còpia de seguretat incremental de 'MEGA'"
-echo "c) Recupera 'MEGA'"
+echo "a1) Còpia de seguretat de 'MEGA'"
+echo "a2) Còpia de seguretat incremental de 'MEGA'"
+echo "a3) Recupera 'MEGA'"
 echo
 echo "***** THUNDERBIRD *****"
-echo "d) Còpia de seguretat de 'THUNDERBIRD'"
-echo "e) Còpia de seguretat incremental de 'THUNDERBIRD'"
-echo "f) Recupera 'THUNDERBIRD'"
+echo "b1) Còpia de seguretat de 'THUNDERBIRD'"
+echo "b2) Còpia de seguretat incremental de 'THUNDERBIRD'"
+echo "b3) Recupera 'THUNDERBIRD'"
 echo
 echo "**** ZONADART ****"
-echo "g) Còpia de seguretat de 'ZONADART'"
-echo "h) Còpia de seguretat incremental de 'ZONADART'"
-echo "i) Recupera 'ZONADART'"
+echo "c1) Còpia de seguretat de 'ZONADART'"
+echo "c2) Còpia de seguretat incremental de 'ZONADART'"
+echo "c3) Recupera 'ZONADART'"
 echo
 echo "***** ARDOUR *****"
-echo "j) Còpia de seguretat de 'ARDOUR'"
-echo "k) Còpia de seguretat incremental de 'ARDOUR'"
-echo "l) Recupera 'ARDOUR'"
+echo "d1) Còpia de seguretat de 'ARDOUR'"
+echo "d2) Còpia de seguretat incremental de 'ARDOUR'"
+echo "d3) Recupera 'ARDOUR'"
 echo
 echo "***** DOCUMENTS *****"
-echo "m) Còpia de seguretat de 'DOCUMENTS'"
-echo "n) Còpia de seguretat incremental de 'DOCUMENTS'"
-echo "o) Recupera 'DOCUMENTS'"
+echo "e1) Còpia de seguretat de 'DOCUMENTS'"
+echo "e2) Còpia de seguretat incremental de 'DOCUMENTS'"
+echo "e3) Recupera 'DOCUMENTS'"
+echo
+echo "***** FILMS *****"
+echo "f1) Còpia de seguretat de 'FILMS'"
+echo "f2) Còpia de seguretat incremental de 'FILMS'"
+echo "f3) Recupera 'FILMS'"
+echo
+echo "***** CONFIG *****"
+echo "g1) Còpia de seguretat de 'CONFIG'"
+echo "g2) Còpia de seguretat incremental de 'CONFIG'"
+echo "g3) Recupera 'CONFIG'"
 echo
 echo "**********"
 echo
@@ -63,106 +73,148 @@ read opcio
 case $opcio in
 
 ############### MEGA 
-a)
+a1)
 duplicity ~/MEGA file:///media/zonadart/EXTERN/mega_bak
 
 sh $adr/sortida.sh
 ;;
 
 ############### MEGA incremental
-b)
+a2)
 duplicity incremental ~/MEGA file:///media/zonadart/EXTERN/mega_bak
 
 sh $adr/sortida.sh
 ;;
 
 ############### MEGA recupera
-c)
+a3)
 duplicity file:///media/zonadart/EXTERN/mega_bak recupera_mega
 
 sh $adr/sortida.sh
 ;;
 
 ############### THUNDERBIRD
-d)
+b1)
 duplicity ~/.thunderbird file:///media/zonadart/EXTERN/thunderbird_bak
 
 sh $adr/sortida.sh
 ;;
 
 ############### THUNDERBIRD incremental
-e)
+b2)
 duplicity incremental ~/.thunderbird file:///media/zonadart/EXTERN/thunderbird_bak
 
 sh $adr/sortida.sh
 ;;
 
 ############### THUNDERBIRD recupera
-f)
+b3)
 duplicity file:///media/zonadart/EXTERN/thunderbird_bak recupera_thunderbird
 
 sh $adr/sortida.sh
 ;;
 
 ############### ZONADART
-g)
+c1)
 duplicity /home/zonadart file:///media/zonadart/EXTERN/zonadart_bak --exclude ~/MEGA --exclude ~/.thunderbird --exclude ~/Ardour --exclude ~/Documents
 
 sh $adr/sortida.sh
 ;;
 
 ############### ZONADART incremental
-h)
+c2)
 duplicity incremental /home/zonadart file:///media/zonadart/EXTERN/zonadart_bak --exclude ~/MEGA --exclude ~/.thunderbird --exclude ~/Ardour --exclude ~/Documents
 
 sh $adr/sortida.sh
 ;;
 
 ############### ZONADART recupera
-i)
+c3)
 duplicity file:///media/zonadart/EXTERN/zonadart_bak recupera_zonadart
 
 sh $adr/sortida.sh
 ;;
 
 ############### ARDOUR
-j)
+d1)
 duplicity /home/zonadart/Ardour file:///media/zonadart/EXTERN/ardour_bak
 
 sh $adr/sortida.sh
 ;;
 
 ############### ARDOUR incremental
-k)
+d2)
 duplicity incremental /home/zonadart/Ardour file:///media/zonadart/EXTERN/ardour_bak
 
 sh $adr/sortida.sh
 ;;
 
 ############### ARDOUR recupera
-l)
+d3)
 duplicity file:///media/zonadart/EXTERN/ardour_bak recupera_ardour
 
 sh $adr/sortida.sh
 ;;
 
 ############### DOCUMENTS
-m)
+e1)
 duplicity /home/zonadart/Documents file:///media/zonadart/EXTERN/documents_bak
 
 sh $adr/sortida.sh
 ;;
 
 ############### DOCUMENTS incremental
-n)
+e2)
 duplicity incremental /home/zonadart/Documents file:///media/zonadart/EXTERN/documents_bak
 
 sh $adr/sortida.sh
 ;;
 
 ############### DOCUMENTS recupera
-o)
+e3)
 duplicity file:///media/zonadart/EXTERN/documents_bak recupera_documents
+
+sh $adr/sortida.sh
+;;
+
+############## FILMS
+f1)
+duplicity /home/Films file:///media/zonadart/EXTERN/films_bak
+
+sh $adr/sortida.sh
+;;
+
+############### FILMS incremental
+f2)
+duplicity incremental /home/Films file:///media/zonadart/EXTERN/films_bak
+
+sh $adr/sortida.sh
+;;
+
+############### FILMS recupera
+f3)
+duplicity file:///media/zonadart/EXTERN/films_bak recupera_films
+
+sh $adr/sortida.sh
+;;
+
+############## CONFIG
+g1)
+duplicity /home/zonadart/.config file:///media/zonadart/EXTERN/config_bak
+
+sh $adr/sortida.sh
+;;
+
+############### CONFIG incremental
+g2)
+duplicity incremental /home/zonadart/.config file:///media/zonadart/EXTERN/config_bak
+
+sh $adr/sortida.sh
+;;
+
+############### CONFIG recupera
+g3)
+duplicity file:///media/zonadart/EXTERN/config_bak recupera_films
 
 sh $adr/sortida.sh
 ;;
@@ -171,9 +223,27 @@ sh $adr/sortida.sh
 q)
 sh $adr/sortida.sh
 ;;
-
 ########### Opció invàlida
-*)
+############## FILMS
+f1)
+duplicity /home/Films file:///media/zonadart/EXTERN/films_bak
+
+sh $adr/sortida.sh
+;;
+
+############### FILMS incremental
+f2)
+duplicity incremental /home/Films file:///media/zonadart/EXTERN/films_bak
+
+sh $adr/sortida.sh
+;;
+
+############### FILMS recupera
+f3)
+duplicity file:///media/zonadart/EXTERN/films_bak recupera_films
+
+sh $adr/sortida.sh
+;;*)
 echo Opció invàlida
 ###########################################################
 esac
