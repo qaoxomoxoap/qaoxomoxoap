@@ -31,7 +31,6 @@ echo "d) XARXES"
 echo "e) SISTEMA"
 echo "f) SERVIDORS"
 echo "g) UTILITATS"
-echo "h) COPIES DE SEGURETAT"
 echo
 echo "**********"
 echo
@@ -71,10 +70,6 @@ sh $adr/serv.sh
 
 g)
 sh $adr/util.sh
-;;
-
-h)
-sh $adr/copsec.sh
 ;;
 
 ################################################# Sortir

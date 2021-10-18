@@ -34,6 +34,7 @@ echo "c) Ecriptar fitxer"
 echo "d) Còpia de seguretat de Keepassxc"
 echo "e) Esborrar fitxer o carpeta de forma segura"
 echo "f) Executar hBlock"
+echo "g) Còpia de seguretat de Films"
 echo "**********"
 echo
 echo "q) Sortir"
@@ -112,6 +113,12 @@ sh $adr/sortida.sh
 f)
 npx hblock
 sh $adr/sortida.sh
+;;
+
+############### Copia seguretat de Films
+g)
+sh $adr/copsec.sh
+#sh $adr/sortida.sh
 ;;
 
 ################################################# Sortir
