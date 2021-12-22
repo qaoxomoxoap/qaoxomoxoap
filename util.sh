@@ -36,6 +36,8 @@ echo "f) youtube-dl - Descàrrega de videos de Youtube"
 echo "g) Pel·lícula per MPV"
 echo "h) Generar còdig QR"
 echo "i) Generar música pel DACIA"
+echo "j) Enviar fitxer al mòbil (QR)"
+echo "k) Localitzar fitxer o directori"
 echo "**********"
 echo
 echo "q) Sortir"
@@ -46,6 +48,31 @@ read opcio
 
 case $opcio in
 
+k)
+echo -n "Introdueïx nom de fitxer ('q' per sortir): "
+read fitxer
+if [ "$fitxer" = "q" ]; then
+  exit
+fi
+plocate $fitxer
+echo
+sh $adr/sortida.sh
+;;
+
+############### Enviar fitxer a mòbil
+j)
+ls -1 
+echo -n "Introdueïx nom del fitxer a enviar ('q' per sortir): "
+read fitxer
+if [ "$fitxer" = "q" ]; then
+  exit
+fi
+qrcp $fitxer
+echo
+sh $adr/sortida.sh
+;;
+
+############### Generar música DACIA
 i)
 echo -n "Introdueïx nom del mp3 a generar ('q' per sortir): "
 read disc

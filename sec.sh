@@ -92,7 +92,7 @@ sh $adr/sortida.sh
 d)
 rsync -vazh $HOME/.config/keepassxc/zonadart.kdbx $HOME/MEGA/MEGAsync/$USER/documents/configuracions/keepassxc/
 rsync -vazh $HOME/.config/keepassxc/keepassxc.ini $HOME/MEGA/MEGAsync/$USER/documents/configuracions/keepassxc/
-#rsync -vazh $HOME/.config/keepassxc/zonadart.kdbx /media/zonadart/EXTERNW/keepassxc/
+rsync -vazh $HOME/.config/keepassxc/zonadart.kdbx /media/zonadart/EXTERNW/keepassxc/
 sh $adr/sortida.sh
 ;;
 
