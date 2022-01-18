@@ -35,6 +35,7 @@ echo "d) Còpia de seguretat de Keepassxc"
 echo "e) Esborrar fitxer o carpeta de forma segura"
 echo "f) Executar hBlock"
 echo "g) Còpia de seguretat de Films"
+echo "h) Actualitzar la base de dades de ClamAV"
 echo "**********"
 echo
 echo "q) Sortir"
@@ -119,6 +120,14 @@ sh $adr/sortida.sh
 g)
 sh $adr/copsec.sh
 #sh $adr/sortida.sh
+;;
+
+############### Actualitzar bases de dades de ClamAV
+h)
+sudo systemctl stop clamav-freshclam
+sudo freshclam
+sudo systemctl start clamav-freshclam
+sh $adr/sortida.sh
 ;;
 
 ################################################# Sortir
