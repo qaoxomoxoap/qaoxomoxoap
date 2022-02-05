@@ -39,6 +39,7 @@ echo "i) Estat General de l'Ordinador"
 echo "j) Borrar snaps"
 echo "k) Desfragmentar disc dur"
 echo "l) Conneixer l'estat de fragmentació d'un disc"
+echo "m) Reconfigurar pulseaudio"
 echo "**********"
 echo
 echo "q) Sortir"
@@ -213,6 +214,14 @@ sudo sh /opt/zonadart/frag.pl /home
 echo
 sh $adr/sortida.sh
 ;;
+
+############### Reconfigurar pulseaudio
+m)
+rm -r ~/.config/pulse; pulseaudio -k
+echo
+sh $adr/sortida.sh
+;;
+
 ################################################# Sortir
 q)
 sh $adr/sortida.sh
