@@ -31,11 +31,12 @@ echo "***** SEGURETAT *****"
 echo "a) Còpia de seguretat dels fitxers de sistema"
 echo "b) Desencriptar fitxer"
 echo "c) Ecriptar fitxer"
-echo "d) Còpia de seguretat de Keepassxc"
-echo "e) Esborrar fitxer o carpeta de forma segura"
-echo "f) Executar hBlock"
-echo "g) Còpia de seguretat de Films"
-echo "h) Actualitzar la base de dades de ClamAV"
+echo "d) Còpia de seguretat de Keepassxc - Gonçal"
+echo "e) Còpia de seguretat de Keepassxc - Àngels"
+echo "f) Esborrar fitxer o carpeta de forma segura"
+echo "g) Executar hBlock"
+echo "h) Còpia de seguretat de Films"
+echo "i) Actualitzar la base de dades de ClamAV"
 echo "**********"
 echo
 echo "q) Sortir"
@@ -89,7 +90,7 @@ gpg --output $filenca --encrypt --recipient $correu $filenc
 sh $adr/sortida.sh
 ;;
 
-############### Còpia de seguretat de Keepassxc
+############### Còpia de seguretat de Keepassxc - Gonçal
 d)
 rsync -vazh $HOME/.config/keepassxc/zonadart.kdbx $HOME/MEGA/MEGAsync/$USER/documents/configuracions/keepassxc/
 rsync -vazh $HOME/.config/keepassxc/keepassxc.ini $HOME/MEGA/MEGAsync/$USER/documents/configuracions/keepassxc/
@@ -97,8 +98,16 @@ rsync -vazh $HOME/.config/keepassxc/zonadart.kdbx /media/zonadart/EXTERNW/keepas
 sh $adr/sortida.sh
 ;;
 
-############### Esbmt=single-columnrrar fitxer de forma segura
+############### Còpia de seguretat de Keepassxc - Àngels
 e)
+rsync -vazh $HOME/.config/keepassxc/angels_db.kdbx $HOME/MEGA/MEGAsync/$USER/documents/configuracions/keepassxc/
+rsync -vazh $HOME/.config/keepassxc/keepassxc.ini $HOME/MEGA/MEGAsync/$USER/documents/configuracions/keepassxc/
+rsync -vazh $HOME/.config/keepassxc/angels_db.kdbx /media/zonadart/EXTERNW/keepassxc/
+sh $adr/sortida.sh
+;;
+
+############### Esbmt=single-columnrrar fitxer de forma segura
+i)
 ls -1 $PWD
 echo -n "Introdueïx nom del fitxer a esborrar ('q' per sortir): "
 read caput
