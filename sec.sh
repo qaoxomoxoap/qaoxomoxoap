@@ -107,7 +107,7 @@ sh $adr/sortida.sh
 ;;
 
 ############### Esbmt=single-columnrrar fitxer de forma segura
-i)
+f)
 ls -1 $PWD
 echo -n "Introdueïx nom del fitxer a esborrar ('q' per sortir): "
 read caput
@@ -120,19 +120,19 @@ sh $adr/sortida.sh
 ;;
 
 ############### Executar hBlock
-f)
+g)
 npx hblock
 sh $adr/sortida.sh
 ;;
 
 ############### Copia seguretat de Films
-g)
+h)
 sh $adr/copsec.sh
 #sh $adr/sortida.sh
 ;;
 
 ############### Actualitzar bases de dades de ClamAV
-h)
+i)
 sudo systemctl stop clamav-freshclam
 sudo freshclam
 sudo systemctl start clamav-freshclam
