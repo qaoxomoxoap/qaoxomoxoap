@@ -31,8 +31,8 @@ echo "***** SEGURETAT *****"
 echo "a) Còpia de seguretat dels fitxers de sistema"
 echo "b) Desencriptar fitxer"
 echo "c) Ecriptar fitxer"
-echo "d) Còpia de seguretat de Keepassxc - Gonçal"
-echo "e) Còpia de seguretat de Keepassxc - Àngels"
+echo "d) Còpia de seguretat de KeePassXC - Gonçal"
+echo "e) Còpia de seguretat de KeePassXC - Àngels"
 echo "f) Esborrar fitxer o carpeta de forma segura"
 echo "g) Executar hBlock"
 echo "h) Còpia de seguretat de Films"
@@ -103,6 +103,12 @@ e)
 rsync -vazh $HOME/.config/keepassxc/angels_db.kdbx $HOME/MEGA/MEGAsync/$USER/documents/configuracions/keepassxc/
 rsync -vazh $HOME/.config/keepassxc/keepassxc.ini $HOME/MEGA/MEGAsync/$USER/documents/configuracions/keepassxc/
 rsync -vazh $HOME/.config/keepassxc/angels_db.kdbx /media/zonadart/EXTERNW/keepassxc/
+mega-login angelsgomro@gmail.com MVNyvUC20v6S
+mega-cd documents/keepassxc/
+mega-rm angels_db.kdbx
+mega-put -c '/home/zonadart/.config/keepassxc/angels_db.kdbx'
+mega-ls
+mega-logout
 sh $adr/sortida.sh
 ;;
 
