@@ -32,7 +32,7 @@ echo "b) Muntar imatge encriptada dades"
 echo "c) Desmuntar imatge encriptada dades"
 echo "d) Optimitzar pdf"
 echo "e) Calcular número pi"
-echo "f) youtube-dl - Descàrrega de videos de Youtube"
+echo "f) yt-dlp - youtube-dl - Descàrrega de videos de Youtube"
 echo "g) Pel·lícula per MPV"
 echo "h) Generar còdig QR"
 echo "i) Generar música pel DACIA"
@@ -138,14 +138,15 @@ echo -n "$HOME/tutankamon"
 sh $adr/sortida.sh
 ;;
 
-###############  youtube-dl
+###############  yt-dlp - youtube-dl
 f)
 echo -n "Introdueïx l'adreça del youtube ('q' per sortir): "
 read video
 if [ "$video" = "q" ]; then
   exit
 fi
-youtube-dl $video
+# youtube-dl $video
+yt-dlp $video
 echo
 echo "Vídeo descarregat correctament"
 sh $adr/sortida.sh
