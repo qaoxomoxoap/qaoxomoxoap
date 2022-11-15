@@ -31,8 +31,8 @@ echo "***** SEGURETAT *****"
 echo "a) Còpia de seguretat dels fitxers de sistema"
 echo "b) Desencriptar fitxer"
 echo "c) Ecriptar fitxer"
-echo "d) Còpia de seguretat de KeePassXC - Gonçal"
-echo "e) Còpia de seguretat de KeePassXC - Àngels"
+echo "d) Còpia de seguretat de KeePassXC - MEGA"
+echo "e) Còpia de seguretat de MEGA - KeePassXC"
 echo "f) Esborrar fitxer o carpeta de forma segura"
 echo "g) Executar hBlock"
 echo "h) Còpia de seguretat de Films"
@@ -90,7 +90,7 @@ gpg --output $filenca --encrypt --recipient $correu $filenc
 sh $adr/sortida.sh
 ;;
 
-############### Còpia de seguretat de Keepassxc - Gonçal
+############### Còpia de seguretat de Keepassxc - MEGA
 d)
 rsync -vazh $HOME/.config/keepassxc/zonadart.kdbx $HOME/MEGA/MEGAsync/$USER/documents/configuracions/keepassxc/
 rsync -vazh $HOME/.config/keepassxc/keepassxc.ini $HOME/MEGA/MEGAsync/$USER/documents/configuracions/keepassxc/
@@ -98,17 +98,19 @@ rsync -vazh $HOME/.config/keepassxc/zonadart.kdbx /media/zonadart/EXTERNW/keepas
 sh $adr/sortida.sh
 ;;
 
-############### Còpia de seguretat de Keepassxc - Àngels
+############### Còpia de seguretat de MEGA - Keepassxc
 e)
-rsync -vazh $HOME/.config/keepassxc/angels_db.kdbx $HOME/MEGA/MEGAsync/$USER/documents/configuracions/keepassxc/
-rsync -vazh $HOME/.config/keepassxc/keepassxc.ini $HOME/MEGA/MEGAsync/$USER/documents/configuracions/keepassxc/
-rsync -vazh $HOME/.config/keepassxc/angels_db.kdbx /media/zonadart/EXTERNW/keepassxc/
-mega-login angelsgomro@gmail.com MVNyvUC20v6S
-mega-cd documents/keepassxc/
-mega-rm angels_db.kdbx
-mega-put -c '/home/zonadart/.config/keepassxc/angels_db.kdbx'
-mega-ls
-mega-logout
+#rsync -vazh $HOME/.config/keepassxc/angels_db.kdbx $HOME/MEGA/MEGAsync/$USER/documents/configuracions/keepassxc/
+#rsync -vazh $HOME/.config/keepassxc/keepassxc.ini $HOME/MEGA/MEGAsync/$USER/documents/configuracions/keepassxc/
+#rsync -vazh $HOME/.config/keepassxc/angels_db.kdbx /media/zonadart/EXTERNW/keepassxc/
+#mega-login angelsgomro@gmail.com MVNyvUC20v6S
+#mega-cd documents/keepassxc/
+#mega-rm angels_db.kdbx
+#mega-put -c '/home/zonadart/.config/keepassxc/angels_db.kdbx'
+#mega-ls
+#mega-logout
+rsync -vazh $HOME/MEGA/MEGAsync/$USER/documents/configuracions/keepassxc/zonadart.kdbx $HOME/.config/keepassxc/
+rsync -vazh $HOME/MEGA/MEGAsync/$USER/documents/configuracions/keepassxc/keepassxc.ini $HOME/.config/keepassxc/
 sh $adr/sortida.sh
 ;;
 

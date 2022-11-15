@@ -1,3 +1,0 @@
-# zonadart
-Configuració
-# qaoxomoxoap
