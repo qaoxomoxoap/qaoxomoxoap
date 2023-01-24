@@ -55,8 +55,19 @@ sh $adr/sortida.sh
 
 ############### Purgar fitxer de configuració
 b)
-sudo dpkg --purge `COLUMNS=300 dpkg -l | egrep "^rc" | cut -d' ' -f3`
-echo "Fitxers purgats correctament"
+#sudo dpkg --purge `COLUMNS=300 dpkg -l | egrep "^rc" | cut -d' ' -f3`
+#echo "Fitxers purgats correctament"
+# Desinstalar paquetes no necesarios
+sudo apt -y autoremove
+
+# Obtener paquetes marcados para ser desinstalados aun presentes en el sistema
+#paquetes=$(sudo dpkg --set-selections | deinstall)
+
+# Eliminar los paquetes obtenidos como resultado del comando anterior
+#echo "$paquetes" | awk '{print $s1}' | xargs sudo apt purge -y
+
+# Limpiar archivos de configuración de paquetes paquetes desinstalados
+sudo apt autoclean
 sh $adr/sortida.sh
 ;;
 
