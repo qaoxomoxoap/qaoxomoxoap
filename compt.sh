@@ -56,6 +56,13 @@ if [ "$copy" = "q" ]; then
   exit
 fi
 fitxer=`ls $HOME/MEGA/MEGAsync/zonadart/documents/sec/comptabilitat/*.sql | head -1`
+###
+# check that file exists or exit
+if [ ! -f $fitxer ]; then
+    echo "No existeix cap fitxer"
+    exit
+fi
+###
 echo "El fitxer a esborrar es: $fitxer"
 rm -i $fitxer
 echo "Copia de Seguretat Esborrada Correctament"
