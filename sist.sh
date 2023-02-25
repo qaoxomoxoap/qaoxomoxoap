@@ -203,7 +203,8 @@ sh $adr/sortida.sh
 
 ############### Desfragmentar disc dur
 k)
-sudo sh /opt/zonadart/desfrag.pl /home
+#sudo sh /opt/zonadart/desfrag.pl /home
+sudo e4defrag /
 echo
 sh $adr/sortida.sh
 ;;
