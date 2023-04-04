@@ -128,7 +128,9 @@ sh $adr/sortida.sh
 
 ############### Velocitat d'Internet
 g)
-speedtest-cli
+#speedtest-cli
+cd /home/zonadart/bin/speedtest/
+./speedtest
 sh $adr/sortida.sh
 ;;
 

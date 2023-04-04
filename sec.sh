@@ -37,6 +37,7 @@ echo "f) Esborrar fitxer o carpeta de forma segura"
 echo "g) Executar hBlock"
 echo "h) Còpia de seguretat de Films"
 echo "i) Actualitzar la base de dades de ClamAV"
+echo "j) Anàl·lisi de seguretat"
 echo "**********"
 echo
 echo "q) Sortir"
@@ -144,6 +145,41 @@ i)
 sudo systemctl stop clamav-freshclam
 sudo freshclam
 sudo systemctl start clamav-freshclam
+sh $adr/sortida.sh
+;;
+
+############### Anàl·lisi de seguretat
+j)
+# Definición de la variable que almacena la ruta con el fichero de logs
+# Como ruta se ha elegido el directorio /var/log
+# El nombre del fichero contendrá la fecha de ejecución en formato YYYY-MM-DD
+LOGFILE="/home/$USER/.scripts/security-check-$(date +'%Y-%m-%d').log";
+
+# Añadir cabecera para los resultados de ClamAV en el fichero LOGFILE
+echo -e "\n********** Resultat Anàl·lisi ClamAV **********\n" >> "$LOGFILE" 
+
+# Ejecutar escaner con ClamAV y guardar resultado en el fichero LOGFILE
+# El parámetro -r sirve para escanear directorios de forma recursiva
+# El parámetro -i sirve para alertar unicamente de los ficheros infectados
+# El parámetro --no-summary sirve para excluir el resumen final
+# En este caso, hacemos el analisis sobre el directorio /home
+sudo clamscan -r -i --no-summary /home >> "$LOGFILE";
+
+# Añadir cabecera para los resultados de Chkrootkit en el fichero LOGFILE
+echo -e "\n********** Resultat Anàl·lisi Chkrootkit **********\n" >> "$LOGFILE" 
+
+# Ejecuta escaner con Chkrootkit y guardar resultado en el fichero LOGFILE
+# El parámetro -q sirve para alertar solo de los warnings 
+#sudo chkrootkit -q >> "$LOGDIR";
+sudo chkrootkit -q >> "$LOGFILE";
+# Añadir cabecera para los resultados de Rkhunter en el fichero LOGFILE
+echo -e "\n********** Resultat Anàl·lisi Rkhunter **********\n" >> "$LOGFILE" 
+
+# Ejecuta escaner con Rkhunter y guardar resultado en el fichero LOGFILE
+# El parámetro -c de Rkhunter sirve para indicar la acción de realizar un escaneo
+# El parámetro -rwo de Rkhunter sirve para alertar solo de los warnings
+sudo rkhunter -c -rwo >> "$LOGFILE";
+
 sh $adr/sortida.sh
 ;;
 
