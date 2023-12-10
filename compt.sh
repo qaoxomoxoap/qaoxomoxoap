@@ -44,10 +44,12 @@ case $opcio in
 a)
 echo
 mv $HOME/*.sql $HOME/MEGA/MEGAsync/zonadart/documents/sec/comptabilitat/.
+
 for i in $(ls -1 $HOME/MEGA/MEGAsync/zonadart/documents/sec/comptabilitat/*.sql)
 do
 echo $i
 done
+
 echo
 echo -n "S'esborrarà fitxer ('q' per sortir): "
 echo

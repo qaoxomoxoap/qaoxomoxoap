@@ -93,9 +93,10 @@ sh $adr/sortida.sh
 
 ############### Còpia de seguretat de Keepassxc - MEGA
 d)
-rsync -vazh $HOME/.config/keepassxc/zonadart.kdbx $HOME/MEGA/MEGAsync/$USER/documents/configuracions/keepassxc/
-rsync -vazh $HOME/.config/keepassxc/keepassxc.ini $HOME/MEGA/MEGAsync/$USER/documents/configuracions/keepassxc/
-rsync -vazh $HOME/.config/keepassxc/zonadart.kdbx /media/zonadart/EXTERNW/keepassxc/
+rsync -vazh $HOME/.config/keepassxc/zonadart.kdbx $HOME/MEGA/MEGAsync/zonadart/documents/configuracions/keepassxc/
+rsync -vazh $HOME/.config/keepassxc/angels_db.kdbx $HOME/MEGA/MEGAsync/zonadart/documents/configuracions/keepassxc/
+rsync -vazh $HOME/.config/keepassxc/keepassxc.ini $HOME/MEGA/MEGAsync/zonadart/documents/configuracions/keepassxc/
+# rsync -vazh $HOME/.config/keepassxc/zonadart.kdbx /media/zonadart/EXTERNW/keepassxc/
 sh $adr/sortida.sh
 ;;
 
@@ -110,8 +111,9 @@ e)
 #mega-put -c '/home/zonadart/.config/keepassxc/angels_db.kdbx'
 #mega-ls
 #mega-logout
-rsync -vazh $HOME/MEGA/MEGAsync/$USER/documents/configuracions/keepassxc/zonadart.kdbx $HOME/.config/keepassxc/
-rsync -vazh $HOME/MEGA/MEGAsync/$USER/documents/configuracions/keepassxc/keepassxc.ini $HOME/.config/keepassxc/
+rsync -vazh $HOME/MEGA/MEGAsync/zonadart/documents/configuracions/keepassxc/zonadart.kdbx $HOME/.config/keepassxc/
+rsync -vazh $HOME/MEGA/MEGAsync/zonadart/documents/configuracions/keepassxc/angels_db.kdbx $HOME/.config/keepassxc/
+rsync -vazh $HOME/MEGA/MEGAsync/zonadart/documents/configuracions/keepassxc/keepassxc.ini $HOME/.config/keepassxc/
 sh $adr/sortida.sh
 ;;
 

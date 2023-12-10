@@ -38,6 +38,10 @@ echo "h) Generar còdig QR"
 echo "i) Generar música pel DACIA"
 echo "j) Enviar fitxer al mòbil (QR)"
 echo "k) Localitzar fitxer o directori"
+echo "l) Desactivar la webcam"
+echo "m) Activar la webcam"
+echo "n) Generar banner ASCII"
+echo "o) Generar missatge VACA"
 echo "**********"
 echo
 echo "q) Sortir"
@@ -48,6 +52,44 @@ read opcio
 
 case $opcio in
 
+############### Generar missatge VACA
+o)
+echo -n "Introdueïx paraula/frase a generar ('q' per sortir): "
+read phrv
+if [ "$phrv" = "q" ]; then
+  exit
+fi
+cowsay $phrv
+echo
+sh $adr/sortida.sh
+;;
+
+############### Generar banner ASCII
+n)
+echo -n "Introdueïx paraula/frase a generar ('q' per sortir): "
+read phrs
+if [ "$phrs" = "q" ]; then
+  exit
+fi
+figlet $phrs
+echo
+sh $adr/sortida.sh
+;;
+############### Activar la webcam
+m)
+sudo modprobe -av uvcvideo
+echo
+sh $adr/sortida.sh
+;;
+
+############### Desactivar la webcam
+l)
+sudo modprobe -rv uvcvideo
+echo
+sh $adr/sortida.sh
+;;
+
+############### Localitzar fitxer o directori
 k)
 echo -n "Introdueïx nom de fitxer ('q' per sortir): "
 read fitxer

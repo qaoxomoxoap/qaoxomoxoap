@@ -30,7 +30,7 @@ set -eu
 #    fi
     # install essential files
     sudo mkdir /opt/zonadart/
-    sudo chown -R $id:$id /opt/zonadart/
+    sudo chown -R zonadart:zonadart /opt/zonadart/
     sudo cp zonadart /opt/zonadart/
 		sudo cp borrar-snaps.sh /opt/zonadart/
 		sudo cp desfrag.pl /opt/zonadart/
