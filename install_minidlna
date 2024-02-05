@@ -1,0 +1,27 @@
+#*** MINIDLNA
+
+
+sudo apt install minidlna
+###################################
+sudo vim /etc/minidlna.conf
+
+friendly_name=Prometheus
+user=root
+media_dir=V,/var/lib/minidlna/VIDEO
+media_dir=P,/var/lib/minidlna/FOTOS
+media_dir=A,/var/lib/minidlna/MUSICA
+###################################
+sudo vim /etc/default/minidlna
+
+USER=”root”
+#GROUP=”minidlna”
+###################################
+sudo ln -sf /home/Films /var/lib/minidlna/VIDEO
+sudo ln -sf /media/zonadart/MUSICA /var/lib/minidlna/MUSICA
+sudo ln -sf /media/zonadart/EXTERN/FOTOS /var/lib/minidlna/FOTOS
+###################################
+
+sudo systemctl start minidlna
+sudo systemctl enable minidlna
+sudo service minidlna force-reload
+###################################

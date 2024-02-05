@@ -1,0 +1,17 @@
+#*** POSTGRESQL
+
+sudo apt-get install postgresql postgresql-client
+su postgres
+psql
+ALTER USER postgres WITH PASSWORD '<password>';
+\q
+psql -U postgres -W -h localhost;
+CREATE USER zonadart PASSWORD 'password';
+ALTER ROLE zonadart WITH SUPERUSER;
+CREATE DATABASE abanq WITH OWNER zonadart;
+CREATE DATABASE clotes WITH OWNER zonadart;
+GRANT ALL PRIVILEGES ON DATABASE abanq TO zonadart;
+GRANT ALL PRIVILEGES ON DATABASE clotes TO zonadart;
+\q
+exit
+

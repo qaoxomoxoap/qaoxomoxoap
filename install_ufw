@@ -1,0 +1,13 @@
+#*** UFW	
+
+aptitude install ufw
+
+sudo ufw default deny
+sudo ufw enable
+sudo ufw logging on
+sudo ufw allow ssh
+sudo ufw allow http
+sudo ufw allow https
+sudo ufw allow 51413
+sudo ufw allow 8200
+sudo ufw allow from 192.168.1.0/24
