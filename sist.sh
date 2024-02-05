@@ -31,7 +31,7 @@ echo "a) Actualitzar catxé de fonts"
 echo "b) Llistat dels discs durs"
 echo "c) Sistema de fonts infinality"
 echo "d) Muntar o desmuntar ISO's al disc dur"
-echo "e) Ajuda de comandes de terminal"
+echo "e) Informació MAN d'un comande"
 echo "f) Alliberar memòria RAM i SWAP"
 echo "g) Optimitzar sistema"
 echo "h) Activar server de python"
@@ -102,7 +102,7 @@ read comande
 if [ "$comande" = "q" ]; then
   exit
 fi
-tldr $comande
+man --locale=es $comande
 sh $adr/sortida.sh
 ;;
 

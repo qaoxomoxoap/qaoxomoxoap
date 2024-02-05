@@ -112,9 +112,9 @@ USER=zonadart
 DATABASE=gnucash_db
 PASS=c4fa6fe9
 
-mysql -h localhost --user=$USER --password="${PASS}" -Nse 'show tables' $DATABASE | while read table; do mysql --user=$USER --password="${PASS}" -e "drop table $table" $DATABASE; done
+mariadb -h localhost --user=$USER --password="${PASS}" -Nse 'show tables' $DATABASE | while read table; do mariadb --user=$USER --password="${PASS}" -e "drop table $table" $DATABASE; done
 
-mysql --user=$USER --password="${PASS}" $DATABASE < $HOME/MEGA/MEGAsync/zonadart/documents/sec/backups/GNUCash/gnucash_db.sql
+mariadb --user=$USER --password="${PASS}" $DATABASE < $HOME/MEGA/MEGAsync/zonadart/documents/sec/backups/GNUCash/gnucash_db.sql
 
 echo "Copia de Seguretat Restaurada Correctament"
 echo
